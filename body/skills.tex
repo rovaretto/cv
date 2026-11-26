@@ -1,0 +1,81 @@
+% ELEMENTS
+
+\newcommand{\AIsmall}{
+    \skillgroup{AI and Data Science}{Machine Learning, Deep Learning; classification and predictive modeling; fine-tuning, embeddings, semantic representations; data preprocessing and feature engineering; Scikit-learn, SciPy, NumPy, Pandas, PyTorch, Matplotlib, Graphviz; Prolog, CLIPS, Clingo; Transformer models and Hugging Face ecosystem}
+}
+
+\newcommand{\AIlarge}{
+    \skillgroup{AI \& Data Science}{Machine Learning, Deep Learning, Statistical Data Analysis, Predictive Modeling, Classification and Clustering, Natural Language Processing (NLP), Fine-Tuning of Transformer Models, Embeddings and Semantic Search, Generative AI, Prompt Engineering, Retrieval-Augmented Generation (RAG), Vector Databases, Data Mining, Feature Engineering}
+    \skillgroup{AI Libraries \& Tools}{PyTorch, Scikit-Learn, NumPy, Pandas, SciPy, Matplotlib, Graphviz, Seaborn, Hugging Face Transformers, Prolog, CLIPS, Clingo}
+}
+
+\newcommand{\database}{
+    \skillgroup{Databases}{SQL, PostgreSQL, MongoDB, Amazon Riak, Apache HBase, Neo4J}
+}
+
+\newcommand{\optimization}{
+    \skillgroup{Optimization and Algorithms}{Combinatorial optimization; quantum computing; Integer Linear Programming and Mixed Integer Linear Programming, Dynamic programming; Pyomo, OR-Tools, CPLEX Optimization Studio, Gurobi; brute force, branch \& bound, backtracking; reductions between classic problems, computability and complexity}
+}
+
+\newcommand{\SW}{
+    \skillgroup{Software Development}{C, Rust, CUDA, Python, Java and Java Spring (OOP), Haskell, OCaml, Agda, MATLAB, Bash, Assembly; concurrency and multi-threading principles; GoF design patterns}
+}
+
+\newcommand{\CI}{
+    \skillgroup{CI/CD and Scrum}{Git, GitLab, GitHub, Atlassian suite (Jira, Confluence), Scrum workflow organization}
+}
+
+\newcommand{\cloud}{
+    \skillgroup{Cloud}{Docker, Kubernetes, RabbitMQ, microservice architecture}
+}
+
+\newcommand{\network}{
+    \skillgroup{Network}{HTTP, TCP/IP, UDP, SSH; client-server and P2P architectures}
+}
+
+\newcommand{\flightandspace}{
+    \skillgroup{Flight Software \& Space Systems}{Satellite autonomy software, flight software development, on-board decision making, mission automation, software architecture for space systems, concurrent and multi-threaded systems, multi-agent and decentralized control concepts, communication constraints in space systems}
+}
+
+\newcommand{\languages}{
+    \skillgroup{Languages}{English (professional working proficiency), Italian (mother tongue), Spanish (basic)}
+}
+
+% ORDER
+
+\cvsection{Skills}
+
+\ifthenelse{\boolean{isIA}}
+{
+    \AIlarge
+    \optimization
+    \flightandspace
+    \SW
+    \network
+    \CI
+    \cloud
+    \database
+    \languages
+}{}
+
+\ifthenelse{\boolean{isSW}}{
+    \SW
+    \flightandspace
+    \CI
+    \cloud
+    \database
+    \AIsmall
+    \optimization
+    \languages
+}{}
+
+\ifthenelse{\boolean{isSpace}}{
+    \flightandspace
+    \SW
+    \AIsmall
+    \CI
+    \optimization
+    \database
+    \cloud
+    \languages
+}{}

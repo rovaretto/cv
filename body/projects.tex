@@ -1,0 +1,194 @@
+% TODO: aggiungere quantum computer research
+
+% ELEMENTS
+\newcommand{\aiko}{
+    \cvproject{AIKO -- Domain-Specific Language for satellite automation}
+    {Built a Domain-Specific Language for satellite automation in Rust, implementing the complete pipeline from parsing through static analysis to execution. Designed and developed the entire compiler stack independently, with senior engineering code reviews. Delivered production-ready language that integrated into the company's core satellite automation product. Designed and executed validation and testing activities for parser, static analysis, and execution components. Drove critical technical decisions by presenting prototypes, trade-off analyses, and implementation plans, successfully aligning senior stakeholders on initiatives that were initially considered non-essential and later adopted as core project components.}
+    {Rust, Git, GitLab, Jira, Confluence, and LaTeX.}
+    {Language and compiler design, pipeline development, CI/CD practices, technical documentation, independent project ownership, and code review collaboration.}
+}
+
+\newcommand{\thesis}{
+    \cvproject{Research scholarship – AI for STEM Learning}
+    {Conducted research on AI-driven analysis to improve STEM education. Developed and prototyped models for topic classification and sentiment analysis of student questions, collaborating with multidisciplinary teams across institutions. Utilized Hugging Face libraries for model fine-tuning and performance acceleration.}
+    {Python, Jupyter Notebook, PyTorch, Hugging Face Transformers, fine-tuning, embeddings, BERT, ontology, data synthesis, LLM generation, Graphviz, Git, SSH, Linux.}
+    {Dataset creation, model evaluation, interdisciplinary teamwork, and problem solving.}
+}
+
+\newcommand{\blockchain}{
+    \cvproject{Distributed Ledger Simulator}
+    {Developed a configurable multi-process distributed ledger simulator implementing transaction generation, validation, and block processing across a network of users and nodes. Built a highly concurrent architecture using System V IPC, shared memory, semaphores, message queues, and signal-based coordination, with dynamic node provisioning and runtime-configurable simulation parameters.}
+    {C, Linux, GCC, Make, Shared Memory, Message Queues, Semaphores, POSIX Signals, Multi-process Architecture.}
+    {Concurrent and Parallel Programming, Inter-Process Communication, Synchronization and Race Condition Prevention, Distributed Systems Simulation.}
+}
+
+\newcommand{\schedulingOR}{
+    \cvproject{Scheduling of operation rooms}
+    {Built a hospital operating room scheduling system to optimize emergency surgery capacity using linear programming and constraint satisfaction. Implemented and benchmarked Brute Force, Backtracking, and Branch \& Bound algorithms in Python with CPLEX Studio, managing large datasets in MongoDB.}
+    {Python, Pyomo, CPLEX Studio, Brute Force, Backtracking, Branch \& Bound, MongoDB, Riak, teamwork.}
+    {Combinatorial optimization, algorithm evaluation, and teamwork.}
+}
+
+\newcommand{\VRP}{
+    \cvproject{Vehicle routing problem}
+    {Designed and implemented cost-effective vehicle routing solutions using Linear Programming (Pyomo, CPLEX), Dynamic Programming, Branch \& Bound, and OR-Tools heuristics.}
+    {Python, Pyomo, CPLEX Studio, OR-Tools, Branch \& Bound.}
+    {Problem-solving, independent research, and algorithm performance evaluation.}
+}
+
+\newcommand{\imageclustering}{
+    \cvproject{Image Clustering}
+    {Designed Computer Vision pipelines using image embeddings and clustering techniques.}
+    {Python, Jupyter Notebook, scikit-learn, Hugging Face Transformers.}
+    {AI system design, method selection.}
+}
+
+\newcommand{\serieAcalendar}{
+    \cvproject{Serie A Calendar Generator}
+    {Created a tool to generate football league calendars with constraint satisfaction (e.g., shared stadiums). Evaluated tool scalability as team numbers increased.}
+    {Clingo.}
+    {Answer Set Programming, constraint satisfaction.}
+}
+
+\newcommand{\labyrinthescape}{
+    \cvproject{Labyrinth Escape Agent}
+    {Developed a Prolog agent to solve labyrinth escape, implementing and comparing informed and uninformed search strategies.}
+    {Prolog, Python.}
+    {Logic programming, search techniques.}
+}
+
+
+\newcommand{\mastermind}{
+    \cvproject{Mastermind Player Agent}
+    {Built a Mastermind-playing agent in CLIPS with three strategies, achieving a 43\% win rate. Utilized subsumption architecture for reactive behavior.}
+    {CLIPS.}
+    {Reactive agent design, real-time systems.}
+}
+
+\newcommand{\aaut}{
+    \cvproject{Machine Learning Mixed Projects}
+    {Solved tasks with decision trees, k-nearest neighbors, DBSCAN clustering, and probabilistic models; analyzed performance and accuracy.}
+    {scikit-learn, DBSCAN, k-nearest neighbors, probabilistic models.}
+    {Model selection, performance evaluation.}
+}
+
+\newcommand{\taass}{
+    \cvproject{Sunbed \& Parasol Booking Platform}
+    {Developed a platform with a team using Java Spring, relational databases, and microservices architecture. Managed deployment with Docker and Kubernetes, with asynchronous communication via RabbitMQ.}
+    {Java, Spring, Git, Docker, Kubernetes, RabbitMQ.}
+    {Backend design, microservices, distributed systems, and team collaboration.}
+}
+
+\newcommand{\aint}{
+    \cvproject{Agents for Auction}
+    {Implemented auction-participating agents in Java (JADE) and Jason (AgentSpeak(L)), comparing BDI-based approaches.}
+    {Java, JADE, Jason.}
+    {BDI agent design, comparative evaluation.}
+}
+
+\newcommand{\quantum}{
+    \cvproject{Independent Research Project – Quantum Annealing for Optimization}
+    {Independently explored quantum annealing as a computational paradigm for solving combinatorial optimization problems. Studied QUBO formulations, minor embedding strategies, and the practical limitations of current quantum annealers, analyzing how real-world optimization problems can be transformed and executed on quantum hardware. Consolidated findings into a technical presentation and report developed in LaTeX and reviewed by a PhD researcher.}
+    {LaTeX, QUBO Modeling}
+    {Quantum Annealing Algorithms, Combinatorial Optimization, QUBO Formulation, Graph Mapping and Embedding Techniques, Research and Technical Analysis, Scientific Literature Interpretation, Independent Learning and Self-Driven Research, Technical Communication}
+}
+
+% ORDER
+
+\cvsection{Projects}
+
+\ifthenelse{\boolean{isIA}}
+{
+    \aiko
+
+   % Machine learning
+    \thesis
+   
+    \imageclustering
+    
+    \aaut
+
+    % Operative research
+    \VRP
+    
+    \schedulingOR
+    
+    \quantum
+    
+    
+    % Autonomous agent
+    \aint
+    
+    \serieAcalendar
+    
+    \labyrinthescape  
+    
+    \mastermind
+    
+    % SW
+    \taass
+    
+    \blockchain
+    
+}{}
+
+\ifthenelse{\boolean{isSW}}{
+    \aiko
+    
+    % SW
+    \taass
+    
+    \blockchain
+    
+    % Machine learning
+    \thesis
+    
+    \imageclustering
+    
+    \aaut
+    
+    % Autonomous agent
+    \aint
+    
+    \serieAcalendar
+    
+    \labyrinthescape  
+    
+    \mastermind
+    
+    % Operative research
+    \VRP
+    
+    \schedulingOR
+    
+    \quantum
+}{}
+
+\ifthenelse{\boolean{isSpace}}{
+    \aiko
+
+    \blockchain
+    
+    \thesis
+
+    \schedulingOR
+
+    \VRP
+
+    \taass
+
+    \imageclustering
+    
+    \aaut
+
+    \aint
+    
+    \serieAcalendar
+    
+    \labyrinthescape  
+    
+    \mastermind
+
+    \quantum
+}{}
+

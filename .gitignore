@@ -1,0 +1,21 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Built CV from main.tex (keep reference PDFs in the repo)
+/main.pdf

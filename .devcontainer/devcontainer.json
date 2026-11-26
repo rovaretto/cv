@@ -1,0 +1,36 @@
+{
+  "name": "LaTeX CV",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop"
+      ],
+      "settings": {
+        "latex-workshop.latex.tools": [
+          {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-pdf",
+              "-interaction=nonstopmode",
+              "-synctex=1",
+              "-file-line-error",
+              "%DOC%"
+            ]
+          }
+        ],
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "latexmk (pdf)",
+            "tools": ["latexmk"]
+          }
+        ],
+        "latex-workshop.latex.autoBuild.run": "onSave"
+      }
+    }
+  },
+  "postCreateCommand": "latexmk -v && kpsewhich sourcesanspro.sty fontawesome5.sty geometry.sty"
+}

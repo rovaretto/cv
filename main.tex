@@ -1,0 +1,24 @@
+\documentclass[10pt]{article}
+\usepackage{cvstyle}
+
+% ---- CV variant: set exactly one to true ----
+\newboolean{isIA}
+\newboolean{isSW}
+\newboolean{isSpace}
+\newboolean{isKiwi}
+\setboolean{isIA}{true}
+\setboolean{isSW}{false}
+\setboolean{isSpace}{false}
+\setboolean{isKiwi}{false}
+
+\begin{document}
+
+\input{body/contacts}
+\input{body/summary}
+\input{body/experience}
+\input{body/skills}
+\input{body/education}
+\input{body/projects}
+\input{body/privacy}
+
+\end{document}
