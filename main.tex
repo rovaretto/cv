@@ -1,15 +1,18 @@
 \documentclass[10pt]{article}
 \usepackage{cvstyle}
 
-% ---- CV variant: set exactly one to true ----
+% ---- CV variant: set exactly one of isIA / isSW / isSpace to true ----
 \newboolean{isIA}
 \newboolean{isSW}
 \newboolean{isSpace}
 \newboolean{isKiwi}
+\newboolean{showEarlyEducation}
 \setboolean{isIA}{true}
 \setboolean{isSW}{false}
 \setboolean{isSpace}{false}
 \setboolean{isKiwi}{false}
+% High school + Galway: off by default for industry packs (tipsforCV)
+\setboolean{showEarlyEducation}{false}
 
 \begin{document}
 

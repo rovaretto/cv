@@ -1,11 +1,23 @@
-% TODO: aggiungere quantum computer research
-
 % ELEMENTS
 \newcommand{\aiko}{
     \cvproject{AIKO -- Domain-Specific Language for satellite automation}
     {Built a Domain-Specific Language for satellite automation in Rust, implementing the complete pipeline from parsing through static analysis to execution. Designed and developed the entire compiler stack independently, with senior engineering code reviews. Delivered production-ready language that integrated into the company's core satellite automation product. Designed and executed validation and testing activities for parser, static analysis, and execution components. Drove critical technical decisions by presenting prototypes, trade-off analyses, and implementation plans, successfully aligning senior stakeholders on initiatives that were initially considered non-essential and later adopted as core project components.}
     {Rust, Git, GitLab, Jira, Confluence, and LaTeX.}
     {Language and compiler design, pipeline development, CI/CD practices, technical documentation, independent project ownership, and code review collaboration.}
+}
+
+\newcommand{\kiwiCRA}{
+    \cvproject{CRA-compliant DevSecOps platform -- Kiwifarm}
+    {Designed reusable security CI/CD for CRA-compliant product repositories: Semgrep SAST, Trivy (filesystem, image, SBOM, IaC, secrets, license), OWASP ZAP DAST, Dependabot with policy-gated auto-merge, Podman builds, and Amazon ECR publish with CycloneDX SBOM and SLSA provenance via ORAS. Delivered admin reusable workflows, lab callers, a greenfield product template, and an integrate path for legacy repos, validated on multi-service applications.}
+    {GitHub Actions, Podman, Amazon ECR, Trivy, Semgrep, OWASP ZAP, ORAS, Dependabot, Safe-Settings, Jira.}
+    {DevSecOps, secure software supply chain, reusable CI/CD, policy-as-code, technical documentation.}
+}
+
+\newcommand{\routeBuilder}{
+    \cvproject{RouteBuilder / WP6 -- construction vehicle routing -- Kiwifarm}
+    {Built a multi-solver routing system for construction delivery logistics to produce feasible, comparable routes for client operations. Implemented a shared V1 JSON contract, cheapest-insertion heuristic, OR-Tools, and MILP solvers, plus a seeded instance sampler, benchmark suite, and export/email pipeline (maps/KML).}
+    {Python, OR-Tools, MILP/HiGHS, pytest, uv workspaces, Docker/Podman.}
+    {Combinatorial optimization, solver engineering, benchmarking, end-to-end data pipelines.}
 }
 
 \newcommand{\thesis}{
@@ -25,7 +37,7 @@
 \newcommand{\schedulingOR}{
     \cvproject{Scheduling of operation rooms}
     {Built a hospital operating room scheduling system to optimize emergency surgery capacity using linear programming and constraint satisfaction. Implemented and benchmarked Brute Force, Backtracking, and Branch \& Bound algorithms in Python with CPLEX Studio, managing large datasets in MongoDB.}
-    {Python, Pyomo, CPLEX Studio, Brute Force, Backtracking, Branch \& Bound, MongoDB, Riak, teamwork.}
+    {Python, Pyomo, CPLEX Studio, Brute Force, Backtracking, Branch \& Bound, MongoDB, teamwork.}
     {Combinatorial optimization, algorithm evaluation, and teamwork.}
 }
 
@@ -43,28 +55,6 @@
     {AI system design, method selection.}
 }
 
-\newcommand{\serieAcalendar}{
-    \cvproject{Serie A Calendar Generator}
-    {Created a tool to generate football league calendars with constraint satisfaction (e.g., shared stadiums). Evaluated tool scalability as team numbers increased.}
-    {Clingo.}
-    {Answer Set Programming, constraint satisfaction.}
-}
-
-\newcommand{\labyrinthescape}{
-    \cvproject{Labyrinth Escape Agent}
-    {Developed a Prolog agent to solve labyrinth escape, implementing and comparing informed and uninformed search strategies.}
-    {Prolog, Python.}
-    {Logic programming, search techniques.}
-}
-
-
-\newcommand{\mastermind}{
-    \cvproject{Mastermind Player Agent}
-    {Built a Mastermind-playing agent in CLIPS with three strategies, achieving a 43\% win rate. Utilized subsumption architecture for reactive behavior.}
-    {CLIPS.}
-    {Reactive agent design, real-time systems.}
-}
-
 \newcommand{\aaut}{
     \cvproject{Machine Learning Mixed Projects}
     {Solved tasks with decision trees, k-nearest neighbors, DBSCAN clustering, and probabilistic models; analyzed performance and accuracy.}
@@ -77,13 +67,6 @@
     {Developed a platform with a team using Java Spring, relational databases, and microservices architecture. Managed deployment with Docker and Kubernetes, with asynchronous communication via RabbitMQ.}
     {Java, Spring, Git, Docker, Kubernetes, RabbitMQ.}
     {Backend design, microservices, distributed systems, and team collaboration.}
-}
-
-\newcommand{\aint}{
-    \cvproject{Agents for Auction}
-    {Implemented auction-participating agents in Java (JADE) and Jason (AgentSpeak(L)), comparing BDI-based approaches.}
-    {Java, JADE, Jason.}
-    {BDI agent design, comparative evaluation.}
 }
 
 \newcommand{\quantum}{
@@ -99,96 +82,39 @@
 
 \ifthenelse{\boolean{isIA}}
 {
+    \routeBuilder
+    \kiwiCRA
     \aiko
-
-   % Machine learning
     \thesis
-   
     \imageclustering
-    
     \aaut
-
-    % Operative research
     \VRP
-    
     \schedulingOR
-    
     \quantum
-    
-    
-    % Autonomous agent
-    \aint
-    
-    \serieAcalendar
-    
-    \labyrinthescape  
-    
-    \mastermind
-    
-    % SW
     \taass
-    
     \blockchain
-    
 }{}
 
 \ifthenelse{\boolean{isSW}}{
+    \kiwiCRA
     \aiko
-    
-    % SW
+    \routeBuilder
     \taass
-    
     \blockchain
-    
-    % Machine learning
     \thesis
-    
-    \imageclustering
-    
-    \aaut
-    
-    % Autonomous agent
-    \aint
-    
-    \serieAcalendar
-    
-    \labyrinthescape  
-    
-    \mastermind
-    
-    % Operative research
     \VRP
-    
     \schedulingOR
-    
     \quantum
 }{}
 
 \ifthenelse{\boolean{isSpace}}{
     \aiko
-
+    \kiwiCRA
+    \routeBuilder
     \blockchain
-    
     \thesis
-
     \schedulingOR
-
     \VRP
-
     \taass
-
-    \imageclustering
-    
-    \aaut
-
-    \aint
-    
-    \serieAcalendar
-    
-    \labyrinthescape  
-    
-    \mastermind
-
     \quantum
 }{}
-
