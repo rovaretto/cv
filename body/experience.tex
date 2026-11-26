@@ -2,21 +2,43 @@
 
 \cventry{Machine Learning Engineer}{Kiwifarm}{Turin, Italy}{Sep 2026 -- Present}
 \begin{cvitems}
-    \item Designed, developed, and maintained a CRA compliant DevSecOps pipeline.
+    \ifthenelse{\boolean{isIA}}
+    {
+    \item Build production vehicle-routing solvers for construction logistics (cheapest-insertion heuristic, OR-Tools, MILP) behind a shared V1 I/O contract, with instance sampling and a multi-solver benchmark suite.
+    \item Implement end-to-end worker pipelines: structured ingest, distance matrix, solve, map/KML export, and client email delivery for operational route plans.
+    \item Harden solver packages with automated tests and Security CI (pytest, Semgrep, Trivy) across worker and frontend repositories.
+    \item Design and maintain CRA-compliant DevSecOps building blocks (reusable GitHub Actions, template and integrate paths) so product repos inherit Semgrep, Trivy, ZAP, and Dependabot gates.
+    }
+    {}
+    \ifthenelse{\boolean{isSW}}
+    {
+    \item Design and maintain a CRA-compliant DevSecOps platform (reusable GitHub Actions in admin, cra-lab callers, product template) covering Semgrep SAST, Trivy (filesystem, image, SBOM, IaC, secrets, license), OWASP ZAP DAST, and Dependabot with policy-gated auto-merge.
+    \item Own the code-to-production path: Podman image build, changelog-gated tags, publish to Amazon ECR with CycloneDX SBOM and SLSA provenance attached via ORAS.
+    \item Codify org security posture with Safe-Settings rulesets and suborg policy so new CRA-compliant repos inherit branch protection and required checks.
+    \item Ship greenfield and legacy adoption paths (\texttt{cra-product-template} and integrate guides) and validate on product repos, including multi-image services.
+    }
+    {}
+    \ifthenelse{\boolean{isSpace}}
+    {
+    \item Design and maintain CRA-compliant security CI/CD (Semgrep, Trivy, ZAP, Dependabot, Podman to ECR with SBOM/SLSA) reused across product repositories.
+    \item Build optimization solvers and routing pipelines for industrial logistics, applying algorithmic methods relevant to autonomous operational decision-making.
+    \item Document and standardize secure delivery workflows (templates, Safe-Settings policy, changelog-gated releases) for consistent engineering practice.
+    }
+    {}
 \end{cvitems}
 
 \cventry{Autonomy Software Engineer Intern}{Aiko}{Turin, Italy}{Jan 2026 -- Jul 2026}
 \begin{cvitems}
     \ifthenelse{\boolean{isIA}}
     {
-    % Nothing
+    \item Developed software for mission automation and on-board decision-making concepts in satellite systems.
+    \item Led design and implementation of a licensed Domain-Specific Language for satellite automation (parse, static analysis, execution), delivering a production-ready stack integrated into the company's automation product after stakeholder prototypes and trade-off reviews.
     }
     {
-    \item Designed, developed, and maintained autonomy software systems for satellite control written in Rust.
-    \item Participated in the full software lifecycle, including requirements analysis, software design, implementation, integration, testing, and maintenance.
-    }
+    \item Designed and maintained autonomy software systems for satellite control written in Rust across requirements, design, implementation, integration, and test.
     \item Developed software for mission automation and on-board decision-making concepts in satellite systems.
-    \item Led the design and development of a licensed Domain-Specific Language (DSL), taking primary responsibility for the software architecture and implementation while collaborating with senior engineers through code and design reviews.
+    \item Led design and implementation of a licensed Domain-Specific Language for satellite automation (parse, static analysis, execution), delivering a production-ready stack integrated into the company's automation product after stakeholder prototypes and trade-off reviews.
+    }
 \end{cvitems}
 
 \cventry{Research Scholarship and Master's Thesis}{University of Turin}{Turin, Italy}{May 2024 -- Jul 2025}
@@ -24,7 +46,7 @@
     \item Developed AI-powered educational tools to improve STEM learning outcomes in middle and high school curricula.
     \ifthenelse{\boolean{isIA}}
     {
-        \item Built a pipeline of NLP tools to perform classification and sentiment analysis.
+        \item Built NLP pipelines for topic classification and sentiment analysis of student questions, using Hugging Face Transformers and model fine-tuning.
     }{
     % Nothing
     }
@@ -32,6 +54,5 @@
 
 \cventry{Private Tutor}{}{}{Jan 2022 -- Present}
 \begin{cvitems}
-    \item Provided tutoring in mathematics, computer science, and physics to more than 35 students.
-    \item Developed strong communication, organization, and interpersonal skills through personalized teaching and mentoring activities.
+    \item Tutor more than 35 students in mathematics, computer science, and physics, adapting explanations to individual learning styles and tracking progress across sessions.
 \end{cvitems}

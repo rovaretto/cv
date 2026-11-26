@@ -6,8 +6,12 @@
 \eduentry{University of Turin}{Turin, Italy}{Bachelor's Degree in Computer Science}{Jul 2023}
 {Graduated with honors (110/110 cum laude).}
 
+% Early education: keep for EU/academic packs; omit on tight industry one-pagers via showEarlyEducation
+\ifthenelse{\boolean{showEarlyEducation}}
+{
 \eduentry{Scientific High School ``Blaise Pascal''}{Turin, Italy}{High School Diploma}{Jun 2020}
 {Recipient of a merit-based scholarship for two consecutive years.}
 
 \eduentry{Study Abroad Program}{Galway, Ireland}{English language courses for international students}{Mar 2018}
 {}
+}{}

@@ -10,11 +10,11 @@
 }
 
 \newcommand{\database}{
-    \skillgroup{Databases}{SQL, PostgreSQL, MongoDB, Amazon Riak, Apache HBase, Neo4J}
+    \skillgroup{Databases}{SQL, PostgreSQL, MongoDB, Neo4J}
 }
 
 \newcommand{\optimization}{
-    \skillgroup{Optimization and Algorithms}{Combinatorial optimization; quantum computing; Integer Linear Programming and Mixed Integer Linear Programming, Dynamic programming; Pyomo, OR-Tools, CPLEX Optimization Studio, Gurobi; brute force, branch \& bound, backtracking; reductions between classic problems, computability and complexity}
+    \skillgroup{Optimization and Algorithms}{Combinatorial optimization; vehicle routing (construction / pickup--delivery); Integer Linear Programming and Mixed Integer Linear Programming; Dynamic programming; Pyomo, OR-Tools, HiGHS, CPLEX Optimization Studio, Gurobi; instance sampling and solver benchmarking; brute force, branch \& bound, backtracking; reductions, computability and complexity; quantum annealing (QUBO)}
 }
 
 \newcommand{\SW}{
@@ -22,11 +22,11 @@
 }
 
 \newcommand{\CI}{
-    \skillgroup{CI/CD and Scrum}{Git, GitLab, GitHub, Atlassian suite (Jira, Confluence), Scrum workflow organization}
+    \skillgroup{CI/CD and Security}{Git, GitLab, GitHub Actions (reusable workflows), Dependabot, Safe-Settings / rulesets; Semgrep; Trivy; OWASP ZAP; Gitleaks; CycloneDX SBOM; SLSA provenance; ORAS; Atlassian suite (Jira, Confluence); Scrum}
 }
 
 \newcommand{\cloud}{
-    \skillgroup{Cloud}{Docker, Kubernetes, RabbitMQ, microservice architecture}
+    \skillgroup{Cloud and Containers}{Docker, Podman, Kubernetes, Amazon ECR, GHCR, RabbitMQ, microservice architecture}
 }
 
 \newcommand{\network}{
@@ -49,33 +49,33 @@
 {
     \AIlarge
     \optimization
-    \flightandspace
-    \SW
-    \network
     \CI
+    \SW
     \cloud
+    \flightandspace
+    \network
     \database
     \languages
 }{}
 
 \ifthenelse{\boolean{isSW}}{
     \SW
-    \flightandspace
     \CI
     \cloud
-    \database
-    \AIsmall
+    \flightandspace
     \optimization
+    \AIsmall
+    \database
     \languages
 }{}
 
 \ifthenelse{\boolean{isSpace}}{
     \flightandspace
     \SW
-    \AIsmall
     \CI
     \optimization
-    \database
+    \AIsmall
     \cloud
+    \database
     \languages
 }{}
